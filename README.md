@@ -1,6 +1,6 @@
-Google Map integration in Angular using AGM
+# Google Map integration in Angular using AGM
 
-Table of Contents 
+# Table of Contents 
 Introduction 
 Setting up a basic project structure
 Install dependencies 
@@ -12,28 +12,30 @@ Build and Run your application
 Github Repository
 Conclusion
 
-Introduction
+# Introduction
 
 The google map integration in angular allows developers to show locations on google maps and information about location in the content window when we move the cursor over the marker.
 
-Setting up a basic project structure
+# Setting up a basic project structure
 Create an Angular CLI project
 We start by creating a project with angular-cli. If you haven’t installed Angular CLI yet, please run the following command first:
-
+<pre>
 npm install -g @angular/cli
-
+</pre>
 Run the following commands to create a new Angular project with Angular CLI:
+<pre>
 ng new angular-google-maps
 cd angular-google-maps
-Install Dependencies
+</pre>
+# Install Dependencies
 Install Angular Google Maps (short name: AGM) via the Node Package Manager (NPM). Run the following commands to add it to your new project:
-
+<pre>
 npm install @agm/core
 npm i @types/googlemaps@3.39.13
-
-Setting up @NgModule 
+</pre>
+# Setting up @NgModule 
 Open src/app/app.module.ts and import the AgmCoreModule. You need to provide a Google Maps API key to be able to see a Map. Get an API key here.
-
+<pre>
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AgmCoreModule } from '@agm/core';
@@ -56,11 +58,12 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
- 
+ </pre>
 
 
-Extending the app Component
+# Extending the app Component
 Angular CLI already created an app component that we’ll now use to create our first google map. We have added markers array, set zoom level, default latitude, longitude and click marker event in the app component. Open the file src/app/app.component.ts and modify it like below:
+<pre>
 import { Component } from '@angular/core';
  
 @Component({
@@ -101,10 +104,11 @@ export class AppComponent  {
       }
   ]
 }
+</pre>
 
-
-Setup the template
+# Setup the template
 Open the file src/app/app.component.html and paste the following content:
+<pre>
 <h1>Angular Google Maps (AGM) Demo</h1>
  
 <agm-map
@@ -130,17 +134,19 @@ Open the file src/app/app.component.html and paste the following content:
   </agm-marker>
  
 </agm-map>
-
-Setup the CSS file
+</pre>
+# Setup the CSS file
 Open the file src/app/app.component.css and paste the following content:
+<pre>
 agm-map {
     height: 500px;
 }
-Build and Run your application
+</pre>
+# Build and Run your application
 Run the below command in the project root folder:
-
+<pre>
 npm start
-
+</pre>
 Then, open the following URL in your browser: http://localhost:4200
 
 When everything works as expected, you should see your first Google Map created with AGM
