@@ -1,16 +1,18 @@
 # Google Map integration in Angular using AGM
 
 # Table of Contents 
-Introduction 
-Setting up a basic project structure
-Install dependencies 
-Setting up @NgModule 
-Extending the app Component
-Setup the template
-Setup the CSS file
-Build and Run your application
-Github Repository
-Conclusion
+<ul>
+<li>Introduction </li>
+<li>Setting up a basic project structure</li>
+<li>Install dependencies </li>
+<li>Setting up @NgModule </li>
+<li>Extending the app Component</li>
+<li>Setup the template</li>
+<li>Setup the CSS file</li>
+<li>Build and Run your application</li>
+<li>Github Repository</li>
+<li>Conclusion</li>
+</ul>
 
 # Introduction
 
@@ -34,7 +36,7 @@ npm install @agm/core
 npm i @types/googlemaps@3.39.13
 </pre>
 # Setting up @NgModule 
-Open src/app/app.module.ts and import the AgmCoreModule. You need to provide a Google Maps API key to be able to see a Map. Get an API key here.
+Open src/app/app.module.ts and import the AgmCoreModule. You need to provide a Google Maps API key to be able to see a Map. Get an API key <a href="https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key" target="_blank">here</a>.
 <pre>
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -107,34 +109,8 @@ export class AppComponent  {
 </pre>
 
 # Setup the template
-Open the file src/app/app.component.html and paste the following content:
-<pre>
-<h1>Angular Google Maps (AGM) Demo</h1>
- 
-<agm-map
-  [latitude]="lat"
-  [longitude]="lng"
-  [zoom]="zoom"
-  [disableDefaultUI]="false"   >
- 
-  <agm-marker
-      *ngFor="let m of markers; let i = index"
-      (markerClick)="clickedMarker(m.label, i)"
-      [latitude]="m.lat"
-      [longitude]="m.lng"
-      [label]="m.label"
-      [markerDraggable]="m.draggable">
-     
-    <agm-info-window>
-      <strong>Label: {{m.label}}</strong><br/>
-      <strong>Latitude: {{m.lat}}</strong><br/>
-      <strong>Longitude: {{m.lng}}</strong>
-    </agm-info-window>
-   
-  </agm-marker>
- 
-</agm-map>
-</pre>
+use the code which we have shown int the src/app/app.component.html file in the github repository.
+
 # Setup the CSS file
 Open the file src/app/app.component.css and paste the following content:
 <pre>
