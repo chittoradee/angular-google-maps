@@ -124,5 +124,4 @@ export class AgmPolygonComponent implements OnInit {
       path
     );
   }
-
 }
