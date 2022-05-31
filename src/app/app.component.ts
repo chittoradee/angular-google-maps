@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,11 +13,13 @@ export class AppComponent  {
   // initial center position for the map
   lat: number = 51.673858;
   lng: number = 7.815982;
-
+  
   clickedMarker(label: string, index: number) {
     console.log(`clicked the marker: ${label || index}`)
   }
-  
+
+
+
   markers = [
 	  {
 		  lat: 51.673858,

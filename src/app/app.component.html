@@ -1,25 +1,33 @@
-<h1>Angular Google Maps (AGM) Demo</h1>
-
-<agm-map 
-  [latitude]="lat"
-  [longitude]="lng"
-  [zoom]="zoom"
-  [disableDefaultUI]="false"   >
-
-  <agm-marker 
-      *ngFor="let m of markers; let i = index"
-      (markerClick)="clickedMarker(m.label, i)"
-      [latitude]="m.lat"
-      [longitude]="m.lng"
-      [label]="m.label"
-      [markerDraggable]="m.draggable">
-      
-    <agm-info-window>
-      <strong>Label: {{m.label}}</strong><br/>
-      <strong>Latitude: {{m.lat}}</strong><br/>
-      <strong>Longitude: {{m.lng}}</strong>
-    </agm-info-window>
-    
-  </agm-marker>
-  
-</agm-map>
+<div class="agm-container-main">
+<mat-tab-group>
+  <mat-tab label="Angular Google Maps (AGM) Demo">
+    <div class="agm-container">
+      <h1>Angular Google Maps (AGM) Demo</h1>
+      <agm-map
+        id="marker-map"
+        [latitude]="lat"
+        [longitude]="lng"
+        [zoom]="zoom"
+        [disableDefaultUI]="false"
+      >
+        <agm-marker
+          *ngFor="let m of markers; let i = index"
+          (markerClick)="clickedMarker(m.label, i)"
+          [latitude]="m.lat"
+          [longitude]="m.lng"
+          [label]="m.label"
+        >
+          <agm-info-window>
+            <strong>Label: {{ m.label }}</strong
+            ><br />
+            <strong>Latitude: {{ m.lat }}</strong
+            ><br />
+            <strong>Longitude: {{ m.lng }}</strong>
+          </agm-info-window>
+        </agm-marker>
+      </agm-map>
+    </div>
+  </mat-tab>
+  <mat-tab label="Angular Google Maps Polygon Demo"> <app-agm-polygon></app-agm-polygon> </mat-tab>
+</mat-tab-group>
+</div>

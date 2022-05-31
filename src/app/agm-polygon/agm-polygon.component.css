@@ -4,11 +4,6 @@ agm-map {
   .agm-container{
     width: 80%;
     margin: auto;
-    padding:2rem 0 0 0;
-  }
-  .agm-container-main{
-    width: 80%;
-    margin: auto;
     padding:2rem;
   }
   h3{

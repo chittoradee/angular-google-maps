@@ -1,0 +1,27 @@
+<div class="agm-container">
+  <h1>Angular Google Maps Polygon Demo</h1>
+  <agm-map
+    id="polygon-map"
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoom"
+    [disableDefaultUI]="false"
+    (mapReady)="onMapReady($event)"
+  >
+  </agm-map>
+  <br />
+  <div *ngIf="pointList.length > 0" class="display-flex">
+    <button mat-stroked-button color="warn" (click)="deleteSelectedShape()">
+      Clear
+    </button>
+  </div>
+  <mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let point of pointList">
+      {{ point.lat.toPrecision(5) }},
+      {{ point.lng.toPrecision(5) }}
+    </mat-list-item>
+  </mat-list>
+  <mat-card *ngIf="selectedArea > 0">
+    <span> Selected Area: {{ selectedArea.toPrecision(5) }}m<sup>2</sup> </span>
+  </mat-card>
+</div>
